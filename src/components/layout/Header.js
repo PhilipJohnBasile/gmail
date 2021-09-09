@@ -4,7 +4,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline'
-import SettingsIcon from '@material-ui/icons/Settings'
+import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
 import AppsIcon from '@material-ui/icons/Apps'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle'
 
@@ -34,7 +34,7 @@ const Header = () => {
 
             <IconsWrapper>
                 <HelpOutlineIcon/>
-                <SettingsIcon/>
+                <SettingsOutlinedIcon/>
                 <AppsIcon/>
                 <AccountCircleIcon/>
             </IconsWrapper>
@@ -47,8 +47,9 @@ export default Header
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 270px auto 170px;
-  border-bottom: 1px solid lightgray;
-  height: 70px;
+  -webkit-box-shadow: inset 0 -1px 0 rgb(100 121 143 / 12%);
+  box-shadow: inset 0 -1px 0 rgb(100 121 143 / 12%);
+  height: 64px;
   align-items: center;
 `
 

@@ -3,37 +3,51 @@ import Compose from '../buttons/Compose'
 
 import VideocamIcon from '@material-ui/icons/Videocam';
 import KeyboardIcon from '@material-ui/icons/Keyboard';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 import {sidebarButtonItems} from '../data/SidebarButtonItems';
+import {bottomIcons} from '../data/BottomsIconsData';
 
 const Sidebar = () => {
     return (
         <Wrapper>
-            <ComposeWrapper>
-                <Compose/>
-            </ComposeWrapper>
+            <TopSectionWrapper>
+                <ComposeWrapper>
+                    <Compose/>
+                </ComposeWrapper>
 
-            <SideButtonsWrapper>
-                {
-                    sidebarButtonItems.map(item => (
-                        <SidebarButtonItem>{item.icon} {item.text}</SidebarButtonItem>
-                    ))
-                }
-            </SideButtonsWrapper>
+                <SideButtonsWrapper>
+                    {
+                        sidebarButtonItems.map(item => (
+                            <SidebarButtonItem>
+                                {item.icon} {item.text}
+                            </SidebarButtonItem>
+                        ))
+                    }
+                </SideButtonsWrapper>
+            </TopSectionWrapper>
+            <BottomSectionWrapper>
+                <SidebarSectionWrapper>
+                    <Title>Meet</Title>
+                    <p><VideocamIcon/>New meeting</p>
+                    <p><KeyboardIcon/>Join a meeting</p>
+                </SidebarSectionWrapper>
 
-            <SidebarSectionWrapper>
-                <Title>Meet</Title>
-                <p><VideocamIcon/>New meeting</p>
-                <p><KeyboardIcon/>Join a meeting</p>
-            </SidebarSectionWrapper>
+                <SidebarSectionWrapper>
+                    <Title>Hangouts</Title>
+                    <p><AccountCircleIcon/>Philip John</p>
+                </SidebarSectionWrapper>
 
-            <SidebarSectionWrapper>
-                Hangouts Stuff
-            </SidebarSectionWrapper>
-
-            <BottomIconsWrapper>
-                Bottom Icons
-            </BottomIconsWrapper>
+                <BottomIconsWrapper>
+                    {
+                        bottomIcons.map(icon => (
+                            <>
+                                {icon}
+                            </>
+                        ))
+                    }
+                </BottomIconsWrapper>
+            </BottomSectionWrapper>
         </Wrapper>
     )
 }
@@ -41,7 +55,10 @@ export default Sidebar
 
 const Wrapper = styled.div`
   border-right: 1px solid lightgray;
-  height: 100vh;
+  height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `
 
 const ComposeWrapper = styled.div`
@@ -69,8 +86,6 @@ const SidebarButtonItem = styled.div`
 `
 
 const SidebarSectionWrapper = styled.div`
-  position: relative;
-  top: 300px;
   border-top: 1px solid lightgray;
 
   p {
@@ -90,5 +105,19 @@ const Title = styled.h4`
 `
 
 const BottomIconsWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  color: gray;
+  border-top: 1px solid lightgray;
+  margin-top: 60px;
 
+  .MuiSvgIcon-root {
+    padding: 2px;
+  }
+`
+
+const TopSectionWrapper = styled.div`
+`
+
+const BottomSectionWrapper = styled.div`
 `

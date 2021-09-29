@@ -57,7 +57,7 @@ const LogoWrapper = styled.div`
   height: 45px;
   display: grid;
   grid-template-columns: 25% 61px 0 auto;
-  
+
   h1 {
     display: grid;
     place-items: center;
@@ -87,18 +87,18 @@ const SearchBarWrapper = styled.div`
   place-items: center;
   height: 45px;
   border-radius: 6px;
-  
+
   .MuiSvgIcon-root {
     color: #5f6368;
   }
-  
+
   input {
     width: 100%;
     height: 30px;
     background: none;
     border: none;
     font-size: 18px;
-    
+
     :focus {
       outline: none;
     }
